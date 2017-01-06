@@ -1,5 +1,5 @@
 {
-  "name": "React youtube application",
+  "name": "ReactYoutubeApplication",
   "version": "1.0.0",
   "description": "Simple application for Redux with React and Babel support",
   "main": "index.js",
@@ -10,6 +10,7 @@
     "test:watch": "npm run test -- --watch"
   },
   "author": "",
+  "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
@@ -31,6 +32,7 @@
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
-    "redux": "^3.0.4"
+    "redux": "^3.0.4",
+    "youtube-api-search": "0.0.5"
   }
 }
