@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar';
 import YTSearch from 'youtube-api-search';
 import VideoList from './components/video_list'
+import VideoDetails from './components/video_detail'
 
 
 //New componnet that will produce html 
@@ -16,7 +17,7 @@ class App extends Component {
 			videos: []
 		}
 
-		YTSearch({key: API_KEY, term: 'surfboard'}, (videos) => {
+		YTSearch({key: API_KEY, term: 'ReactJS'}, (videos) => {
 				// this.setState({videos});
 				this.setState({videos: videos });
 			});
@@ -27,6 +28,7 @@ class App extends Component {
 		return (
 			<div> 
 				<SearchBar />
+				<VideoDetails video={this.state.videos[0]} />
 				<VideoList videos={this.state.videos} />
 			</div>
 			);
