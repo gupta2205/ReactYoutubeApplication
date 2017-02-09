@@ -8,18 +8,15 @@ class SearchBar extends Component {
 //defining state in constrsctor 
 	constructor(props){
 		super(props);
-		this.state = {terms: ''};
+		this.state = {term: ''};
 	}
 
 	render(){
 		return (
 			<div>
 				<input 
-				value ={this.state.terms}
-				onChange={event => this.setState({
-					terms:event.target.value 
-				})} /> 
-				
+				value ={this.state.term}
+				onChange={event => this.onInputChange(event.target.value)} /> 
 				{/*			
 				<input onChange={this.onInputChange} />
 				<input onChange={event => console.log(event.target.value)} />
@@ -32,8 +29,9 @@ class SearchBar extends Component {
 		); 
 	}
 
-	onInputChange(event) {
-		console.log(event);
+	onInputChange(term) {
+		this.setState({term});
+		this.props.onSearchTermChange(term);
 	}
 }
 
